@@ -110,7 +110,7 @@ class _SlidingSegmentedControlState<T>
     }
   }
 
-  double computeOffset<T>({
+  double computeOffset({
     required List<double> sizes,
     required List<T?> items,
     T? current,
@@ -134,7 +134,7 @@ class _SlidingSegmentedControlState<T>
     final Map<T?, double> temp = {};
     temp.putIfAbsent(item.key, () => size.width);
     if (widget.initialValue != null && widget.initialValue == item.key) {
-      final newOffset = computeOffset<T>(
+      final newOffset = computeOffset(
         current: current,
         items: widget.children.keys.toList(),
         sizes: sizes.values.toList(),
@@ -158,7 +158,7 @@ class _SlidingSegmentedControlState<T>
     final prev = current;
     setState(() => current = item.key);
     final List<T?> keys = widget.children.keys.toList();
-    final newOffset = computeOffset<T>(
+    final newOffset = computeOffset(
       current: current,
       items: keys,
       sizes: sizes.values.toList(),

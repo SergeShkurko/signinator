@@ -27,7 +27,7 @@ class Parent extends StatefulWidget {
   });
 
   @override
-  _ParentState createState() => _ParentState();
+  State<Parent> createState() => _ParentState();
 }
 
 class _ParentState extends State<Parent> {

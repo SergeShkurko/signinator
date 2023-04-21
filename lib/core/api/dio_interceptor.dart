@@ -40,10 +40,10 @@ class DioInterceptor extends Interceptor {
   }
 
   @override
-  void onError(DioError dioError, ErrorInterceptorHandler handler) {
+  void onError(DioError err, ErrorInterceptorHandler handler) {
     log.e(
-      "<-- ${dioError.message} ${dioError.response?.requestOptions != null ? (dioError.response!.requestOptions.baseUrl + dioError.response!.requestOptions.path) : 'URL'}\n\n"
-      "${dioError.response != null ? dioError.response!.data : 'Unknown Error'}",
+      "<-- ${err.message} ${err.response?.requestOptions != null ? (err.response!.requestOptions.baseUrl + err.response!.requestOptions.path) : 'URL'}\n\n"
+      "${err.response != null ? err.response!.data : 'Unknown Error'}",
     );
 
     // Crashlytics.nonFatalError(
@@ -51,7 +51,7 @@ class DioInterceptor extends Interceptor {
     //   stackTrace: dioError.stackTrace,
     //   reason: "Failed to fetch data",
     // );
-    super.onError(dioError, handler);
+    super.onError(err, handler);
   }
 
   @override

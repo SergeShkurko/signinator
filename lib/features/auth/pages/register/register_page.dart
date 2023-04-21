@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mobx/mobx.dart';
+import 'package:provider/provider.dart';
 import 'package:signinator/core/core.dart';
 import 'package:signinator/features/features.dart';
 
@@ -15,7 +15,7 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   late final store = context.read<RegisterStore>();
-  late final authActionNotifier = context.read<AuthActionNotifier>();
+  late final authActionNotifier = context.watch<AuthActionNotifier>();
 
   /// Focus Node
   final _fnEmail = FocusNode();
@@ -46,7 +46,7 @@ class _RegisterPageState extends State<RegisterPage> {
     final result = await store.register();
     if (result && mounted) {
       context.read<AuthStore>().login();
-      context.pushReplacementNamed(Routes.root.name);
+      context.goNamed(Routes.root.name);
     }
   }
 

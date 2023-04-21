@@ -26,14 +26,12 @@ enum Routes {
 
 class AppRoute {
   static late BuildContext context;
-  static final authRoute = GlobalKey<NavigatorState>();
 
   AppRoute.setStream(BuildContext ctx) {
     context = ctx;
   }
 
   static final GoRouter router = GoRouter(
-    navigatorKey: authRoute,
     routes: [
       GoRoute(
         path: Routes.splashScreen.path,

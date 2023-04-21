@@ -28,7 +28,6 @@ dependencies:
   get_it: ^7.2.0
 
   # State Management
-  flutter_bloc: ^8.1.2
   mobx: ^2.1.4
   flutter_mobx: ^2.0.6+5
 

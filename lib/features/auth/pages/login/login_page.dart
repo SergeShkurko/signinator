@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mobx/mobx.dart';
+import 'package:provider/provider.dart';
 import 'package:signinator/core/core.dart';
 import 'package:signinator/features/features.dart';
 
@@ -14,7 +14,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  late final store = context.read<LoginStore>();
+  late final store = context.watch<LoginStore>();
 
   /// Focus Node
   final _fnEmail = FocusNode();
@@ -41,7 +41,7 @@ class _LoginPageState extends State<LoginPage> {
     final result = await store.login();
     if (result && mounted) {
       context.read<AuthStore>().login();
-      context.pushReplacementNamed(Routes.root.name);
+      context.goNamed(Routes.root.name);
     }
   }
 

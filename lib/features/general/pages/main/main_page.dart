@@ -12,11 +12,12 @@ class MainPage extends StatelessWidget {
     return Parent(
       child: Center(
         child: ButtonText(
-            title: Strings.of(context)!.signOut,
-            onPressed: () {
-              context.read<AuthStore>().logout();
-              context.push(Routes.root.name);
-            }),
+          title: Strings.of(context)!.signOut,
+          onPressed: () {
+            context.read<AuthStore>().logout();
+            context.go(Routes.login.path);
+          },
+        ),
       ),
     );
   }
