@@ -42,6 +42,11 @@ class _AuthPageState extends State<AuthPage> {
     super.dispose();
   }
 
+  void onForgotPasswordPressed() => showNotification(
+        context,
+        NotificationDetails.success(Strings.of(context)!.loremIpsum),
+      );
+
   @override
   Widget build(BuildContext context) {
     final thirdOfTheScreen = (MediaQuery.of(context).size.height * 0.66);
@@ -109,7 +114,7 @@ class _AuthPageState extends State<AuthPage> {
                 const SpacerV(value: Dimens.space42),
                 ButtonText(
                   title: Strings.of(context)!.forgotPassword,
-                  onPressed: () {},
+                  onPressed: onForgotPasswordPressed,
                 ),
               ],
             ),
