@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:signinator/core/core.dart';
 import 'package:signinator/features/auth/auth.dart';
+import 'package:signinator/utils/utils.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({
@@ -55,6 +56,8 @@ class _AuthPageState extends State<AuthPage> {
     final isLoginRoute = router.location.contains(Routes.login.name);
 
     return Parent(
+      // backgroundColor: Theme.of(context).colorScheme.background,
+      // backgroundColor: Colors.red,
       child: Stack(
         children: [
           Positioned.fill(
@@ -62,9 +65,9 @@ class _AuthPageState extends State<AuthPage> {
             child: Stack(
               alignment: Alignment.bottomCenter,
               children: [
-                const Positioned.fill(
+                Positioned.fill(
                   child: DecoratedBox(
-                    decoration: BoxDecoration(color: Color(0xFFBFDBFE)),
+                    decoration: BoxDecoration(color: context.palette.secondary),
                   ),
                 ),
                 Positioned(
@@ -89,7 +92,7 @@ class _AuthPageState extends State<AuthPage> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 SizedBox(
-                  height: 192,
+                  height: 204, // for forms fields validation errors
                   child: ChangeNotifierProvider.value(
                     value: authAction,
                     child: widget.child,

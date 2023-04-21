@@ -51,8 +51,7 @@ class SigninatorApp extends StatelessWidget {
             theme: themeLight(context),
             darkTheme: themeDark(context),
             supportedLocales: L10n.all,
-            themeMode: ThemeMode.light,
-            // themeMode: ThemeMode.dark,
+            // themeMode: ThemeMode.light,
           );
         },
       ),

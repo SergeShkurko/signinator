@@ -55,40 +55,44 @@ SnackBar _buildSnackbar({
 }) =>
     SnackBar(
       padding: const EdgeInsets.all(Dimens.space12),
-      content: Row(
-        children: [
-          Container(
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
+      content: DefaultTextStyle(
+        style: const TextStyle(color: Palette.white),
+        child: Row(
+          children: [
+            Container(
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: Palette.white,
+              ),
+              padding: const EdgeInsets.all(Dimens.space4),
+              margin: const EdgeInsets.only(left: Dimens.space4),
+              width: Dimens.space24,
+              height: Dimens.space24,
+              child: Icon(
+                leadingIcon,
+                size: 16,
+                color: color,
+              ),
+            ),
+            const SpacerH(value: Dimens.space16),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title, style: Typographies.h6),
+                if (description != null) ...[
+                  Text(description, style: Typographies.body2),
+                  const SpacerV(value: Dimens.space2),
+                ],
+              ],
+            ),
+            const Spacer(),
+            IconButton(
+              icon: const Icon(Icons.close),
+              onPressed: onClose,
               color: Palette.white,
             ),
-            padding: const EdgeInsets.all(Dimens.space4),
-            width: Dimens.space24,
-            height: Dimens.space24,
-            child: Icon(
-              leadingIcon,
-              size: 14,
-              color: color,
-            ),
-          ),
-          const SpacerH(value: Dimens.space12),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(title),
-              if (description != null) ...[
-                const SpacerV(value: Dimens.space2),
-                Text(description),
-              ],
-            ],
-          ),
-          const Spacer(),
-          IconButton(
-            icon: const Icon(Icons.close),
-            onPressed: onClose,
-            color: Palette.white,
-          ),
-        ],
+          ],
+        ),
       ),
       backgroundColor: color,
       behavior: SnackBarBehavior.floating,

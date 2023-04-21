@@ -37,6 +37,7 @@ class Button extends StatelessWidget {
           backgroundColor: color ?? context.palette.primary,
           foregroundColor: context.palette.foreground,
           padding: const EdgeInsets.symmetric(horizontal: Dimens.space24),
+          textStyle: Typographies.button,
           shape: const BeveledRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(Dimens.cornerRadius),
@@ -44,11 +45,7 @@ class Button extends StatelessWidget {
           ),
         ),
         child: Text(
-          title.toUpperCase(),
-          style: Theme.of(context)
-              .textTheme
-              .labelLarge
-              ?.copyWith(color: Palette.white),
+          title,
           textAlign: TextAlign.center,
         ),
       ),

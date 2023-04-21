@@ -78,7 +78,7 @@ class _TextFState extends State<TextF> {
         maxLines: widget.maxLine ?? 10,
         inputFormatters: widget.inputFormatter,
         textAlignVertical: TextAlignVertical.center,
-        style: Theme.of(context).textTheme.bodyMedium,
+        style: Typographies.body1,
         cursorColor: context.palette.foreground,
         decoration: InputDecoration(
           prefixText: widget.prefixText,
@@ -110,7 +110,6 @@ class _TextFState extends State<TextF> {
           enabledBorder: OutlineInputBorder(
             gapPadding: 0,
             borderRadius: BorderRadius.circular(Dimens.space24),
-            // borderSide: const BorderSide(color: Palette.disable),
             borderSide: BorderSide(color: context.palette.primary),
           ),
           disabledBorder: OutlineInputBorder(
@@ -118,10 +117,8 @@ class _TextFState extends State<TextF> {
             borderRadius: BorderRadius.circular(Dimens.space24),
             borderSide: const BorderSide(color: Palette.disable),
           ),
-          errorStyle: Theme.of(context)
-              .textTheme
-              .labelSmall
-              ?.copyWith(color: context.palette.error),
+          errorStyle: Typographies.body2
+              .copyWith(height: 1, color: context.palette.error),
           focusedErrorBorder: OutlineInputBorder(
             gapPadding: 0,
             borderRadius: BorderRadius.circular(Dimens.space24),

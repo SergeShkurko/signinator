@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:signinator/core/core.dart';
 import 'package:signinator/utils/utils.dart';
 
 /// Light theme
 ThemeData themeLight(BuildContext context) => ThemeData(
-      fontFamily: 'Poppins',
       useMaterial3: true,
       primaryColor: context.palette.primary,
       disabledColor: Palette.disable,
@@ -15,70 +13,7 @@ ThemeData themeLight(BuildContext context) => ThemeData(
       colorScheme: const ColorScheme.light().copyWith(
         primary: context.palette.primary,
         background: context.palette.background,
-      ),
-      textTheme: TextTheme(
-        displayLarge: Theme.of(context).textTheme.displayLarge?.copyWith(
-              fontSize: Dimens.displayLarge,
-              color: context.palette.foreground,
-            ),
-        displayMedium: Theme.of(context).textTheme.displayMedium?.copyWith(
-              fontSize: Dimens.displayMedium,
-              color: context.palette.foreground,
-            ),
-        displaySmall: Theme.of(context).textTheme.displaySmall?.copyWith(
-              fontSize: Dimens.displaySmall,
-              color: context.palette.foreground,
-            ),
-        headlineMedium: Theme.of(context).textTheme.headlineMedium?.copyWith(
-              fontSize: Dimens.headlineMedium,
-              color: context.palette.foreground,
-            ),
-        headlineSmall: Theme.of(context).textTheme.headlineSmall?.copyWith(
-              fontSize: Dimens.headlineSmall,
-              color: context.palette.foreground,
-            ),
-        titleLarge: Theme.of(context).textTheme.titleLarge?.copyWith(
-              fontSize: Dimens.titleLarge,
-              color: context.palette.foreground,
-            ),
-        titleMedium: Theme.of(context).textTheme.titleMedium?.copyWith(
-              fontSize: Dimens.titleMedium,
-              color: context.palette.foreground,
-            ),
-        titleSmall: Theme.of(context).textTheme.titleSmall?.copyWith(
-              fontSize: Dimens.titleSmall,
-              color: context.palette.foreground,
-            ),
-        bodyLarge: Theme.of(context).textTheme.bodyLarge?.copyWith(
-              fontSize: Dimens.bodyLarge,
-              color: context.palette.foreground,
-            ),
-        bodyMedium: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              fontSize: Dimens.bodyMedium,
-              color: context.palette.foreground,
-            ),
-        bodySmall: Theme.of(context).textTheme.bodySmall?.copyWith(
-              fontSize: Dimens.bodySmall,
-              color: context.palette.foreground,
-            ),
-        labelLarge: Theme.of(context).textTheme.labelLarge?.copyWith(
-              fontSize: Dimens.labelLarge,
-              color: context.palette.foreground,
-            ),
-        labelSmall: Theme.of(context).textTheme.labelSmall?.copyWith(
-              fontSize: Dimens.labelSmall,
-              letterSpacing: 0.25,
-              color: context.palette.foreground,
-            ),
-      ),
-      appBarTheme: const AppBarTheme().copyWith(
-        titleTextStyle: Theme.of(context).textTheme.bodyLarge,
-        color: Palette.white,
-        iconTheme: IconThemeData(color: context.palette.primary),
-        systemOverlayStyle: SystemUiOverlayStyle.dark.copyWith(
-          statusBarColor: Colors.transparent,
-        ),
-        surfaceTintColor: Palette.white,
+        surface: context.palette.background,
       ),
       brightness: Brightness.light,
       iconTheme: IconThemeData(color: context.palette.primary),
@@ -87,78 +22,16 @@ ThemeData themeLight(BuildContext context) => ThemeData(
 
 /// Dark theme
 ThemeData themeDark(BuildContext context) => ThemeData(
-      fontFamily: 'Poppins',
       useMaterial3: true,
       primaryColor: context.palette.primary,
       disabledColor: Palette.disable,
-      hintColor: Palette.white.withOpacity(0.75),
-      cardColor: context.palette.primary.withOpacity(0.75),
+      hintColor: Palette.accent,
+      cardColor: context.palette.background,
       scaffoldBackgroundColor: context.palette.background,
-      colorScheme:
-          const ColorScheme.dark().copyWith(primary: context.palette.primary),
-      textTheme: TextTheme(
-        displayLarge: Theme.of(context).textTheme.displayLarge?.copyWith(
-              fontSize: Dimens.displayLarge,
-              color: Palette.white,
-            ),
-        displayMedium: Theme.of(context).textTheme.displayMedium?.copyWith(
-              fontSize: Dimens.displayMedium,
-              color: Palette.white,
-            ),
-        displaySmall: Theme.of(context).textTheme.displaySmall?.copyWith(
-              fontSize: Dimens.displaySmall,
-              color: Palette.white,
-            ),
-        headlineMedium: Theme.of(context).textTheme.headlineMedium?.copyWith(
-              fontSize: Dimens.headlineMedium,
-              color: Palette.white,
-            ),
-        headlineSmall: Theme.of(context).textTheme.headlineSmall?.copyWith(
-              fontSize: Dimens.headlineSmall,
-              color: Palette.white,
-            ),
-        titleLarge: Theme.of(context).textTheme.titleLarge?.copyWith(
-              fontSize: Dimens.titleLarge,
-              color: Palette.white,
-            ),
-        titleMedium: Theme.of(context).textTheme.titleMedium?.copyWith(
-              fontSize: Dimens.titleMedium,
-              color: Palette.white,
-            ),
-        titleSmall: Theme.of(context).textTheme.titleSmall?.copyWith(
-              fontSize: Dimens.titleSmall,
-              color: Palette.white,
-            ),
-        bodyLarge: Theme.of(context).textTheme.bodyLarge?.copyWith(
-              fontSize: Dimens.bodyLarge,
-              color: Palette.white,
-            ),
-        bodyMedium: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              fontSize: Dimens.bodyMedium,
-              color: Palette.white,
-            ),
-        bodySmall: Theme.of(context).textTheme.bodySmall?.copyWith(
-              fontSize: Dimens.bodySmall,
-              color: Palette.white,
-            ),
-        labelLarge: Theme.of(context).textTheme.labelLarge?.copyWith(
-              fontSize: Dimens.labelLarge,
-              color: Palette.white,
-            ),
-        labelSmall: Theme.of(context).textTheme.labelSmall?.copyWith(
-              fontSize: Dimens.labelSmall,
-              letterSpacing: 0.25,
-              color: Palette.white,
-            ),
-      ),
-      appBarTheme: const AppBarTheme().copyWith(
-        titleTextStyle: Theme.of(context).textTheme.bodyLarge,
-        iconTheme: const IconThemeData(color: Palette.white),
-        color: context.palette.primary,
-        systemOverlayStyle: SystemUiOverlayStyle.light.copyWith(
-          statusBarColor: Colors.transparent,
-        ),
-        surfaceTintColor: context.palette.primary,
+      colorScheme: const ColorScheme.dark().copyWith(
+        primary: context.palette.primary,
+        background: context.palette.background,
+        surface: context.palette.background,
       ),
       brightness: Brightness.dark,
       iconTheme: IconThemeData(color: context.palette.primary),

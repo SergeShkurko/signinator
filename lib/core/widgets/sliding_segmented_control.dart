@@ -218,7 +218,7 @@ class _SlidingSegmentedControlState<T>
                   child: Expanded(
                     child: DefaultTextStyle(
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: Typographies.button.copyWith(
                         color: item.key == current
                             ? Palette.white
                             : context.palette.foreground,

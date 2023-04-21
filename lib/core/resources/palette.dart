@@ -53,7 +53,8 @@ import 'package:flutter/material.dart';
 
 abstract class Palette {
   static Palette of(BuildContext context) =>
-      Theme.of(context).brightness == Brightness.light
+      // Theme.of(context).brightness == Brightness.light
+      WidgetsBinding.instance.window.platformBrightness == Brightness.light
           ? PaletteLight._()
           : PaletteDark._();
 

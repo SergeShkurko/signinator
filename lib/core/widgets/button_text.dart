@@ -29,6 +29,7 @@ class ButtonText extends StatelessWidget {
           onPressed: onPressed,
           style: TextButton.styleFrom(
             foregroundColor: context.palette.buttonAccent,
+            textStyle: Typographies.button,
             padding: const EdgeInsets.symmetric(
               vertical: Dimens.space10,
               horizontal: Dimens.space16,
