@@ -10,6 +10,10 @@ class AuthRepositoryImpl implements AuthRepository {
   const AuthRepositoryImpl(this.authRemoteDatasource, this.authLocalDatasource);
 
   @override
+  Future<Either<Failure, bool>> get isLoggedIn async =>
+      await authLocalDatasource.isLoggedIn;
+
+  @override
   Future<Either<Failure, Login>> login(LoginParams loginParams) async {
     final response = await authRemoteDatasource.login(loginParams);
 
@@ -38,7 +42,6 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<Either<Failure, void>> logout() async {
-    return await authLocalDatasource.signOut();
-  }
+  Future<Either<Failure, void>> logout() async =>
+      await authLocalDatasource.signOut();
 }

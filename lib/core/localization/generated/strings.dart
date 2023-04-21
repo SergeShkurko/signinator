@@ -93,48 +93,6 @@ abstract class Strings {
     Locale('ru')
   ];
 
-  /// No description provided for @dashboard.
-  ///
-  /// In en, this message translates to:
-  /// **'Dashboard'**
-  String get dashboard;
-
-  /// No description provided for @about.
-  ///
-  /// In en, this message translates to:
-  /// **'About'**
-  String get about;
-
-  /// No description provided for @selectDate.
-  ///
-  /// In en, this message translates to:
-  /// **'Choose Date'**
-  String get selectDate;
-
-  /// No description provided for @selectTime.
-  ///
-  /// In en, this message translates to:
-  /// **'Choose Time'**
-  String get selectTime;
-
-  /// No description provided for @select.
-  ///
-  /// In en, this message translates to:
-  /// **'Select'**
-  String get select;
-
-  /// No description provided for @cancel.
-  ///
-  /// In en, this message translates to:
-  /// **'Cancel'**
-  String get cancel;
-
-  /// No description provided for @pleaseWait.
-  ///
-  /// In en, this message translates to:
-  /// **'Please Wait...'**
-  String get pleaseWait;
-
   /// No description provided for @login.
   ///
   /// In en, this message translates to:
@@ -171,6 +129,12 @@ abstract class Strings {
   /// **'Forgot passoword?'**
   String get forgotPassword;
 
+  /// No description provided for @signOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign out'**
+  String get signOut;
+
   /// No description provided for @failed.
   ///
   /// In en, this message translates to:
@@ -188,78 +152,6 @@ abstract class Strings {
   /// In en, this message translates to:
   /// **'Lorem ipsum dolor sit amet, consectetur'**
   String get loremIpsum;
-
-  /// No description provided for @askRegister.
-  ///
-  /// In en, this message translates to:
-  /// **'Don\'t have an Account?'**
-  String get askRegister;
-
-  /// No description provided for @errorInvalidEmail.
-  ///
-  /// In en, this message translates to:
-  /// **'Email is not valid'**
-  String get errorInvalidEmail;
-
-  /// No description provided for @errorEmptyField.
-  ///
-  /// In en, this message translates to:
-  /// **'Can\'t be empty'**
-  String get errorEmptyField;
-
-  /// No description provided for @passwordRepeat.
-  ///
-  /// In en, this message translates to:
-  /// **'Repeat Password'**
-  String get passwordRepeat;
-
-  /// No description provided for @errorPasswordNotMatch.
-  ///
-  /// In en, this message translates to:
-  /// **'Password not match'**
-  String get errorPasswordNotMatch;
-
-  /// No description provided for @settings.
-  ///
-  /// In en, this message translates to:
-  /// **'Settings'**
-  String get settings;
-
-  /// No description provided for @themeLight.
-  ///
-  /// In en, this message translates to:
-  /// **'Theme Light'**
-  String get themeLight;
-
-  /// No description provided for @themeDark.
-  ///
-  /// In en, this message translates to:
-  /// **'Theme Dark'**
-  String get themeDark;
-
-  /// No description provided for @errorNoData.
-  ///
-  /// In en, this message translates to:
-  /// **'No data'**
-  String get errorNoData;
-
-  /// No description provided for @logout.
-  ///
-  /// In en, this message translates to:
-  /// **'Logout'**
-  String get logout;
-
-  /// No description provided for @logoutDesc.
-  ///
-  /// In en, this message translates to:
-  /// **'Do you want to logout from the app?'**
-  String get logoutDesc;
-
-  /// No description provided for @yes.
-  ///
-  /// In en, this message translates to:
-  /// **'Yes'**
-  String get yes;
 }
 
 class _StringsDelegate extends LocalizationsDelegate<Strings> {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:provider/provider.dart';
 import 'package:signinator/core/core.dart';
 import 'package:signinator/dependencies_injection.dart';
 import 'package:signinator/features/features.dart';
@@ -18,10 +18,8 @@ class SigninatorApp extends StatelessWidget {
       ),
     );
 
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (_) => sl<AuthCubit>()),
-      ],
+    return Provider(
+      create: (_) => sl<AuthStore>(),
       child: Builder(
         builder: (context) {
           /// Pass context to appRoute

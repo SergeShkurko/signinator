@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mobx/mobx.dart';
 import 'package:provider/provider.dart';
 import 'package:signinator/dependencies_injection.dart';
 import 'package:signinator/features/features.dart';
@@ -69,7 +70,8 @@ class AppRoute {
     initialLocation: Routes.splashScreen.path,
     routerNeglect: true,
     debugLogDiagnostics: kDebugMode,
-    refreshListenable: GoRouterRefreshStream(context.read<AuthCubit>().stream),
+    refreshListenable:
+        GoRouterRefreshStream(context.read<AuthStore>().isLoggedIn.obs()),
     redirect: (_, GoRouterState state) {
       final bool isLoginPage = state.subloc == Routes.login.path ||
           state.subloc == Routes.register.path;

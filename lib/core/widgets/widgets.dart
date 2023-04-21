@@ -1,6 +1,5 @@
 export 'button.dart';
 export 'button_text.dart';
-export 'loading.dart';
 export 'measure_size.dart';
 export 'notification.dart';
 export 'parent.dart';

@@ -40,6 +40,7 @@ class _LoginPageState extends State<LoginPage> {
   Future<void> login() async {
     final result = await store.login();
     if (result && mounted) {
+      context.read<AuthStore>().login();
       context.pushReplacementNamed(Routes.root.name);
     }
   }

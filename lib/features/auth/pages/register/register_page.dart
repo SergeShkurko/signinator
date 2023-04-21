@@ -45,6 +45,7 @@ class _RegisterPageState extends State<RegisterPage> {
   Future<void> register() async {
     final result = await store.register();
     if (result && mounted) {
+      context.read<AuthStore>().login();
       context.pushReplacementNamed(Routes.root.name);
     }
   }

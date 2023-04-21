@@ -9,6 +9,8 @@ abstract class AuthLocalDatasource {
   );
 
   Future<Either<Failure, void>> signOut();
+
+  Future<Either<Failure, bool>> get isLoggedIn;
 }
 
 class AuthLocalDatasourceImpl implements AuthLocalDatasource {
@@ -33,6 +35,15 @@ class AuthLocalDatasourceImpl implements AuthLocalDatasource {
       _manager.isLogin = false;
       _manager.token = '';
       return const Right(null);
+    } catch (error) {
+      return Left(CacheFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> get isLoggedIn async {
+    try {
+      return Right(_manager.isLogin);
     } catch (error) {
       return Left(CacheFailure());
     }

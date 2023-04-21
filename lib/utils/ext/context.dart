@@ -60,7 +60,7 @@ extension ContextExtensions on BuildContext {
                   margin:
                       const EdgeInsets.symmetric(horizontal: Dimens.space30),
                   padding: const EdgeInsets.all(Dimens.space24),
-                  child: Wrap(children: const [Loading()]),
+                  child: Wrap(children: const [CircularProgressIndicator()]),
                 ),
               ),
             ),

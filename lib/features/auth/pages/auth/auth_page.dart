@@ -73,7 +73,7 @@ class _AuthPageState extends State<AuthPage> {
                   top: 24,
                   left: 24,
                   child: SafeArea(
-                    child: SvgPicture.asset('assets/images/logo.svg'),
+                    child: SvgPicture.asset(Images.logo),
                   ),
                 ),
               ],

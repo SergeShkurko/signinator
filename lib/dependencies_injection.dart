@@ -55,6 +55,8 @@ void dataSources() {
 
 void useCase() {
   /// Auth
+  sl.registerLazySingleton(() => IsLoggedIn(sl()));
+  sl.registerLazySingleton(() => Logout(sl()));
   sl.registerLazySingleton(() => PostLogin(sl()));
   sl.registerLazySingleton(() => PostRegister(sl()));
 }
@@ -63,5 +65,5 @@ void cubit() {
   /// Auth
   sl.registerFactory(() => RegisterStore(sl()));
   sl.registerFactory(() => LoginStore(sl()));
-  sl.registerFactory(() => AuthCubit(sl()));
+  sl.registerFactory(() => AuthStore(sl(), sl()));
 }
