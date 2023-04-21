@@ -77,7 +77,7 @@ abstract class LoginStoreBase with Store {
         (l) {
           if (l is ServerFailure) {
             _notificationStreamController
-                .add(NotificationDetails.success(l.message));
+                .add(NotificationDetails.error(l.message));
           }
           return false;
         },

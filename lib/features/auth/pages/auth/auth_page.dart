@@ -98,9 +98,10 @@ class _AuthPageState extends State<AuthPage> {
                     initialValue: isLoginRoute
                         ? AuthSegmentType.signIn
                         : AuthSegmentType.signUp,
-                    children: const {
-                      AuthSegmentType.signIn: Text('Login'),
-                      AuthSegmentType.signUp: Text('Sign-up'),
+                    children: {
+                      AuthSegmentType.signIn: Text(Strings.of(context)!.login),
+                      AuthSegmentType.signUp:
+                          Text(Strings.of(context)!.register),
                     },
                     onValueChanged: onSegmentTapped,
                   ),
