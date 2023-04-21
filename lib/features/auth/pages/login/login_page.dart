@@ -14,26 +14,26 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  late final store = context.watch<LoginStore>();
+  late final store = context.read<LoginStore>();
+  late final authActionNotifier = context.read<AuthActionNotifier>();
 
   /// Focus Node
   final _fnEmail = FocusNode();
   final _fnPassword = FocusNode();
 
-  /// Global key
-  final _keyForm = GlobalKey<FormState>();
-
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback(
-      (_) => context.read<AuthActionNotifier>().addListener(login),
+      (_) => authActionNotifier.addListener(login),
     );
   }
 
   @override
   void dispose() {
-    context.watch<AuthActionNotifier>().removeListener(login);
+    authActionNotifier.removeListener(login);
+    _fnEmail.dispose();
+    _fnPassword.dispose();
     super.dispose();
   }
 
@@ -56,60 +56,57 @@ class _LoginPageState extends State<LoginPage> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: Dimens.space24),
           child: AutofillGroup(
-            child: Form(
-              key: _keyForm,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Observer(
-                    builder: (context) => TextF(
-                      autofillHints: const [AutofillHints.email],
-                      key: const Key("email"),
-                      curFocusNode: _fnEmail,
-                      nextFocusNode: _fnPassword,
-                      textInputAction: TextInputAction.next,
-                      onChanged: (value) => store.email = value,
-                      keyboardType: TextInputType.emailAddress,
-                      hintText: Strings.of(context)!.username,
-                      prefixIcon: Icon(
-                        Icons.person,
-                        color: Theme.of(context).textTheme.bodyLarge?.color,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Observer(
+                  builder: (context) => TextF(
+                    autofillHints: const [AutofillHints.email],
+                    key: const Key("email"),
+                    curFocusNode: _fnEmail,
+                    nextFocusNode: _fnPassword,
+                    textInputAction: TextInputAction.next,
+                    onChanged: (value) => store.email = value,
+                    keyboardType: TextInputType.emailAddress,
+                    hintText: Strings.of(context)!.username,
+                    prefixIcon: Icon(
+                      Icons.person,
+                      color: Theme.of(context).textTheme.bodyLarge?.color,
+                    ),
+                  ),
+                ),
+                Observer(
+                  builder: (context) => TextF(
+                    margin: EdgeInsets.zero,
+                    autofillHints: const [AutofillHints.password],
+                    key: const Key("password"),
+                    curFocusNode: _fnPassword,
+                    textInputAction: TextInputAction.done,
+                    onChanged: (value) => store.password = value,
+                    keyboardType: TextInputType.text,
+                    prefixIcon: Icon(
+                      Icons.lock_outline,
+                      color: Theme.of(context).textTheme.bodyLarge?.color,
+                    ),
+                    obscureText: store.isPasswordHide,
+                    hintText: Strings.of(context)!.password,
+                    maxLine: 1,
+                    suffixIcon: IconButton(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: Dimens.space12),
+                      constraints: const BoxConstraints(),
+                      onPressed: () =>
+                          store.isPasswordHide = !store.isPasswordHide,
+                      icon: Icon(
+                        store.isPasswordHide
+                            ? Icons.visibility_off
+                            : Icons.visibility,
                       ),
                     ),
                   ),
-                  Observer(
-                    builder: (context) => TextF(
-                      margin: EdgeInsets.zero,
-                      autofillHints: const [AutofillHints.password],
-                      key: const Key("password"),
-                      curFocusNode: _fnPassword,
-                      textInputAction: TextInputAction.done,
-                      onChanged: (value) => store.password = value,
-                      keyboardType: TextInputType.text,
-                      prefixIcon: Icon(
-                        Icons.lock_outline,
-                        color: Theme.of(context).textTheme.bodyLarge?.color,
-                      ),
-                      obscureText: store.isPasswordHide,
-                      hintText: Strings.of(context)!.password,
-                      maxLine: 1,
-                      suffixIcon: IconButton(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: Dimens.space12),
-                        constraints: const BoxConstraints(),
-                        onPressed: () =>
-                            store.isPasswordHide = !store.isPasswordHide,
-                        icon: Icon(
-                          store.isPasswordHide
-                              ? Icons.visibility_off
-                              : Icons.visibility,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),

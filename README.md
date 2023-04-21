@@ -11,17 +11,19 @@ interview test task
 - Run `flutter run --flavor stg -t lib/main_stg.dart` for **staging** or
 - Run `flutter run --flavor prd -t lib/main_prd.dart` for **production**
 
-## Credentials
+## Credentials 
+Used [reqres.io](https://reqres.in/) for auth flow
 
 Login
  - username: eve.holt@reqres.in
- - password: cityslicka
+ - password: any
 
 Registration
  - email: eve.holt@reqres.in
  - username: any
- - password: cityslicka
+ - password: any
 
+Use other email for get error
 
 ## Architecture Proposal
 
