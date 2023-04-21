@@ -62,7 +62,6 @@ class _TextFState extends State<TextF> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      // width: double.infinity,
       padding: widget.margin,
       child: TextFormField(
         key: widget.key,

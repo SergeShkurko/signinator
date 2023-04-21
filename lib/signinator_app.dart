@@ -13,9 +13,7 @@ class SigninatorApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-      ),
+      const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
     );
 
     return Provider(
@@ -51,7 +49,6 @@ class SigninatorApp extends StatelessWidget {
             theme: themeLight(context),
             darkTheme: themeDark(context),
             supportedLocales: L10n.all,
-            // themeMode: ThemeMode.light,
           );
         },
       ),
