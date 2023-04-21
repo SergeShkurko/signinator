@@ -1,0 +1,32 @@
+{
+  "dashboard": "Dashboard",
+  "about": "About",
+  "selectDate": "Choose Date",
+  "selectTime": "Choose Time",
+  "select": "Select",
+  "cancel": "Cancel",
+  "pleaseWait": "Please Wait...",
+
+  "login": "Войти",
+  "email": "Email",
+  "username": "Имя пользователя",
+  "password": "Пароль",
+  "register": "Регистрация",
+  "forgotPassword": "Забыли пароль?",
+  "failed": "Ошибка!",
+  "succeed": "Успех!",
+  "loremIpsum": "Чтобы добиться успеха в жизни нужно только... :)",
+
+  "askRegister": "Don't have an Account?",
+  "errorInvalidEmail": "Email is not valid",
+  "errorEmptyField": "Can't be empty",
+  "passwordRepeat": "Repeat Password",
+  "errorPasswordNotMatch": "Password not match",
+  "settings": "Settings",
+  "themeLight": "Theme Light",
+  "themeDark": "Theme Dark",
+  "errorNoData": "No data",
+  "logout": "Logout",
+  "logoutDesc": "Do you want to logout from the app?",
+  "yes": "Yes"
+}

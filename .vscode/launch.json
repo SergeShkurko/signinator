@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "signinator stage",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "debug",
+      "args": [
+        "--enable-impeller",
+        "--flavor",
+        "stg",
+        "--web-port",
+        "8080"
+      ],
+      "program": "lib/main_stg.dart"
+    }
+  ]
+}

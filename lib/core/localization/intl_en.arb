@@ -1,0 +1,32 @@
+{
+  "dashboard": "Dashboard",
+  "about": "About",
+  "selectDate": "Choose Date",
+  "selectTime": "Choose Time",
+  "select": "Select",
+  "cancel": "Cancel",
+  "pleaseWait": "Please Wait...",
+
+  "login": "Login",
+  "email": "Email",
+  "username": "Username",
+  "password": "Password",
+  "register": "Register",
+  "forgotPassword": "Forgot passoword?",
+  "failed": "Error!",
+  "succeed": "Well done!",
+  "loremIpsum": "Lorem ipsum dolor sit amet, consectetur",
+
+  "askRegister": "Don't have an Account?",
+  "errorInvalidEmail": "Email is not valid",
+  "errorEmptyField": "Can't be empty",
+  "passwordRepeat": "Repeat Password",
+  "errorPasswordNotMatch": "Password not match",
+  "settings": "Settings",
+  "themeLight": "Theme Light",
+  "themeDark": "Theme Dark",
+  "errorNoData": "No data",
+  "logout": "Logout",
+  "logoutDesc": "Do you want to logout from the app?",
+  "yes": "Yes"
+}
