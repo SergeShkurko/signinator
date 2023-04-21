@@ -64,6 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                     textInputAction: TextInputAction.next,
                     onChanged: (value) => store.email = value,
                     keyboardType: TextInputType.emailAddress,
+                    hintText: Strings.of(context)!.username,
                     prefixIcon: Icon(
                       Icons.person,
                       color: Theme.of(context).textTheme.bodyLarge?.color,
